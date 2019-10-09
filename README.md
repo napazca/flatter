@@ -9,8 +9,8 @@ unless the source is directly from json string. This one also supports for neste
 jsonNested := `{
   "delivery_address": {
     "contact_number":   "08123456789",  // Output: map["delivery_address.contact_number"]
-    "city":             "Jakarta",                // Output: map["delivery_address.city"]
-    "zip_code":         "11440"               // Output: map["delivery_address.zip_code"]
+    "city":             "Jakarta",      // Output: map["delivery_address.city"]
+    "zip_code":         "11440"         // Output: map["delivery_address.zip_code"]
   }
 }`
 

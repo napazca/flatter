@@ -4,8 +4,8 @@ Transform json string to golang map in flat way
 This is simple repo works just like https://github.com/fatih/structs, which transforming to golang map,
 unless the source is directly from json string. This one also supports for nested struct and array.
 - Nested Example
-```json
-{
+```go
+jsonStr := {
   "delivery_address": {
     "contact_number": "08123456789",  // Output: map["delivery_address.contact_number"]
     "city": "Jakarta",                // Output: map["delivery_address.city"]
@@ -14,8 +14,8 @@ unless the source is directly from json string. This one also supports for neste
 }
 ```
 - Array Example
-```json
-{
+```go
+jsonStr := {
   "opts": [ "Monday", "Tuesday", "Wednesday" ] // Output: map["opts[0]"] = Monday opts[1]:Tuesday opts[2]:Wednesday
 }
 ```

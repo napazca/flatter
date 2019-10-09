@@ -8,9 +8,9 @@ unless the source is directly from json string. This one also supports for neste
 // Nested Example
 jsonNested := `{
   "delivery_address": {
-    "contact_number": "08123456789",  // Output: map["delivery_address.contact_number"]
-    "city": "Jakarta",                // Output: map["delivery_address.city"]
-    "zip_code": "11440"               // Output: map["delivery_address.zip_code"]
+    "contact_number":   "08123456789",  // Output: map["delivery_address.contact_number"]
+    "city":             "Jakarta",                // Output: map["delivery_address.city"]
+    "zip_code":         "11440"               // Output: map["delivery_address.zip_code"]
   }
 }`
 
@@ -28,14 +28,14 @@ Sometimes we need data structure to be able automatically manipulate things from
 You have json to be transformed to map:
 ```json
 {
-  "cart_id":27325477,
-  "name": "Gopher",
+  "cart_id":      27325477,
+  "name":         "Gopher",
   "total_amount": 520.79,
-  "promo": true,
+  "promo":        true,
   "delivery_address":{
       "contact_number": "08123456789",
-      "city": "Jakarta",
-      "zip_code": "11440"
+      "city":           "Jakarta",
+      "zip_code":       "11440"
   },
   "books": [
     {"title": "AAA"},
@@ -47,14 +47,14 @@ You have json to be transformed to map:
 ```
 Call the function:
 ```go
-    result, err := Flatter(jsonStr)
-    if err != nil {
-    	fmt.Println(err.Error())
-    	return
-    }
-    
-    fmt.Printf("%+v", result)
-    // Output: map[books[0].title:AAA books[1].title:BBB books[2].title:CCC cart_id:27325477 delivery_address.city:Jakarta delivery_address.contact_number:08123456789 delivery_address.zip_code:11440 name:Gopher opts[0]:Monday opts[1]:Tuesday opts[2]:Wednesday promo:true total_amount:520.79]
+result, err := Flatter(jsonStr)
+if err != nil {
+    fmt.Println(err.Error())
+    return
+}
+
+fmt.Printf("%+v", result)
+// Output: map[books[0].title:AAA books[1].title:BBB books[2].title:CCC cart_id:27325477 delivery_address.city:Jakarta delivery_address.contact_number:08123456789 delivery_address.zip_code:11440 name:Gopher opts[0]:Monday opts[1]:Tuesday opts[2]:Wednesday promo:true total_amount:520.79]
 ```
 
 ## Benchmark

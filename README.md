@@ -16,7 +16,7 @@ jsonNested := `{
 
 // Array Example
 jsonArr := {
-  "opts": [ "Monday", "Tuesday", "Wednesday" ] // Output: map["opts[0]"] = Monday opts[1]:Tuesday opts[2]:Wednesday
+  "opts": `[ "Monday", "Tuesday", "Wednesday" ]` // Output: map["opts[0]"] = Monday opts[1]:Tuesday opts[2]:Wednesday
 }
 ```
 
